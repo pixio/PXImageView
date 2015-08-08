@@ -5,11 +5,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        An imageview with better content modes like Top which means fit and align to top.
                        DESC
-  s.homepage         = "https://git.pixio.com/"
+  s.homepage         = "https://github.com/pixio/PXImageView"
   s.license          = 'MIT'
   s.author           = { "Daniel Blakemore" => "DanBlakemore@gmail.com" }
   s.source = {
-    :git => "git@git.pixio.com:ios-pods/pximageview.git",
+    :git => "https://github.com/pixio/PXImageView.git",
     :tag => s.version.to_s
   }
 
