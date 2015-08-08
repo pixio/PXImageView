@@ -1,0 +1,40 @@
+PODS:
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - PXImageView (0.1.0):
+    - UIImageView_AFNetworking-Blocks
+  - UIImageView_AFNetworking-Blocks (0.1.0):
+    - AFNetworking (~> 2.0)
+
+DEPENDENCIES:
+  - PXImageView (from `../`)
+
+EXTERNAL SOURCES:
+  PXImageView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  PXImageView: 648c964a116feec072e15f41a175d6bf36965bd0
+  UIImageView_AFNetworking-Blocks: f19c2d3e87e7dd014a5d83592c09e5e22c5f94eb
+
+COCOAPODS: 0.36.4
