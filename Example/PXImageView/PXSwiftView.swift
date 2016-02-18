@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoView: UIView {
+class PXSwiftView: UIView {
     enum PXAnimationOrientation {
         case PXAnimationOrientationHoriztonal
         case PXAnimationOrientationVertical

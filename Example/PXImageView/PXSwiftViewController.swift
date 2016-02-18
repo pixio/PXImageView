@@ -1,5 +1,5 @@
 //
-//  DemoViewController.swift
+//  PXSwiftViewController.swift
 //  PXImageView
 //
 //  Created by Dave Heyborne on 2.17.16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PXSwiftViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     private let _contentModes: [String] = ["PXContentModeFill", "PXContentModeFit", "PXContentModeTop", "PXContentModeLeft", "PXContentModeRight", "PXContentModeBottom", "PXContentModeSides", "PXContentModeTopBottom"]
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -16,11 +16,11 @@ class DemoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     override func loadView() {
-        view = DemoView()
+        view = PXSwiftView()
     }
     
-    var contentView: DemoView {
-        return view as! DemoView
+    var contentView: PXSwiftView {
+        return view as! PXSwiftView
     }
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class DemoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        contentView.animateDirection(DemoView.PXAnimationOrientation.PXAnimationOrientationHoriztonal)
+        contentView.animateDirection(PXSwiftView.PXAnimationOrientation.PXAnimationOrientationHoriztonal)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

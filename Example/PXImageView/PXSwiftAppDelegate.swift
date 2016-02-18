@@ -1,5 +1,5 @@
 //
-//  DemoAppDelegate.swift
+//  PXSwiftAppDelegate.swift
 //  PXImageView
 //
 //  Created by Dave Heyborne on 2.17.16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoAppDelegate: UIResponder, UIApplicationDelegate {
+class PXSwiftAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
@@ -17,7 +17,7 @@ class DemoAppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
                 
-        let controller: DemoViewController = DemoViewController()
+        let controller: PXSwiftViewController = PXSwiftViewController()
         let navController: UINavigationController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navController
         
