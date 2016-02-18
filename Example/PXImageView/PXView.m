@@ -31,12 +31,8 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-//        NSString* triforceString = @"http://zeldawiki.org/images/thumb/2/23/ALBW_Triforce.png/200px-ALBW_Triforce.png";
-        NSString* portraitString = @"http://moodle.galenaparkisd.com/pluginfile.php/125718/course/section/38826/6440077107_23fd80e619_z.jpg";
-//        NSString* _landscapeString =  @"http://dummyimage.com/600x400/000/fff";
-        
         UIImage* triforcePlaceholder = [UIImage imageNamed:@"triforce.png"];
-        NSURL* portraitURL = [NSURL URLWithString:portraitString];
+        NSURL* portraitURL = [NSURL URLWithString:@"http://moodle.galenaparkisd.com/pluginfile.php/125718/course/section/38826/6440077107_23fd80e619_z.jpg"];
         
         // Initialize class vars
         _constraints = [NSMutableArray array];
@@ -117,9 +113,8 @@
     [self removeConstraints:_constraints];
     [_constraints removeAllObjects];
     
-    NSNumber* bsp = [NSNumber numberWithInt:20];
     NSDictionary* views = NSDictionaryOfVariableBindings(_imageView, _containerView, _contentModePicker);
-    NSDictionary* metrics = @{@"sp" : @20, @"ssp" : @10, @"bsp" :bsp};
+    NSDictionary* metrics = @{@"sp" : @20, @"ssp" : @10, @"bsp" : @20};
 
     // Horizontal
     [_constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-sp-[_containerView]-sp-|" options:0 metrics:metrics views:views]];
