@@ -11,6 +11,10 @@ import UIKit
 class DemoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     private let _contentModes: [String] = ["PXContentModeFill", "PXContentModeFit", "PXContentModeTop", "PXContentModeLeft", "PXContentModeRight", "PXContentModeBottom", "PXContentModeSides", "PXContentModeTopBottom"]
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func loadView() {
         view = DemoView()
     }
