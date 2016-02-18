@@ -33,7 +33,7 @@ class DemoView: UIView {
     
     override init(frame: CGRect) {
         _constraints = []
-        print("Testy")
+        
         _containerView = UIView()
         _containerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -57,7 +57,7 @@ class DemoView: UIView {
         _widthConstraint = _fullWidthConstraint
         _heightConstraint = _fullHeightConstraint
         
-        _orientation = PXAnimationOrientation.PXAnimationOrientationHoriztonal // MARK: FIXME
+        _orientation = PXAnimationOrientation.PXAnimationOrientationHoriztonal
         
         super.init(frame: frame)
         let tapper: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap")
