@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PXSwiftAppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
@@ -17,7 +17,7 @@ class PXSwiftAppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
                 
-        let controller: PXSwiftViewController = PXSwiftViewController()
+        let controller: ViewController = ViewController()
         let navController: UINavigationController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navController
         

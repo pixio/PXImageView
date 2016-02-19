@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PXSwiftView: UIView {
+class View: UIView {
     enum PXAnimationOrientation {
         case PXAnimationOrientationHoriztonal
         case PXAnimationOrientationVertical
@@ -30,6 +30,8 @@ class PXSwiftView: UIView {
     private var _heightConstraint: NSLayoutConstraint
     
     private var _orientation: PXAnimationOrientation
+    
+    var stuff: Int = 0
     
     override init(frame: CGRect) {
         _constraints = []

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PXSwiftViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     private let _contentModes: [String] = ["PXContentModeFill", "PXContentModeFit", "PXContentModeTop", "PXContentModeLeft", "PXContentModeRight", "PXContentModeBottom", "PXContentModeSides", "PXContentModeTopBottom"]
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -16,11 +16,11 @@ class PXSwiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     override func loadView() {
-        view = PXSwiftView()
+        view = View()
     }
     
-    var contentView: PXSwiftView {
-        return view as! PXSwiftView
+    var contentView: View {
+        return view as! View
     }
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class PXSwiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        contentView.animateDirection(PXSwiftView.PXAnimationOrientation.PXAnimationOrientationHoriztonal)
+        contentView.animateDirection(View.PXAnimationOrientation.PXAnimationOrientationHoriztonal)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
