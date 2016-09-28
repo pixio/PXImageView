@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'PXImageView', :exclusive => true do
+use_frameworks!
+
+target 'PXImageViewExample' do
   pod "PXImageView", :path => "../"
 end
 
-target 'Tests', :exclusive => true do
+target 'Tests' do
   pod "PXImageView", :path => "../"
-
-
 end

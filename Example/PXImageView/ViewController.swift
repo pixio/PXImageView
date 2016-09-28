@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import PXImageView
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    private let _contentModes: [String] = ["PXContentModeFill", "PXContentModeFit", "PXContentModeTop", "PXContentModeLeft", "PXContentModeRight", "PXContentModeBottom", "PXContentModeSides", "PXContentModeTopBottom"]
+    fileprivate let _contentModes: [String] = ["PXContentModeFill", "PXContentModeFit", "PXContentModeTop", "PXContentModeLeft", "PXContentModeRight", "PXContentModeBottom", "PXContentModeSides", "PXContentModeTopBottom"]
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     override func loadView() {
@@ -28,52 +29,52 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         title = "PX Image View"
         
         view.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
-        edgesForExtendedLayout = UIRectEdge.None
+        edgesForExtendedLayout = UIRectEdge()
         
-        navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        navigationController?.navigationBar.barTintColor = UIColor.orange
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
         contentView.contentModePicker().delegate = self
         contentView.contentModePicker().dataSource = self
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        contentView.animateDirection(View.PXAnimationOrientation.PXAnimationOrientationHoriztonal)
+        contentView.animateDirection(View.PXAnimationOrientation.pxAnimationOrientationHoriztonal)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return _contentModes.count
     }
 
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return _contentModes[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let imageView: PXImageView = contentView.imageView
         
         switch row {
         case 0:
-            imageView.contentMode = PXContentMode.Fill
+            imageView.contentMode = PXContentMode.fill
         case 1:
-            imageView.contentMode = PXContentMode.Fit
+            imageView.contentMode = PXContentMode.fit
         case 2:
-            imageView.contentMode = PXContentMode.Top
+            imageView.contentMode = PXContentMode.top
         case 3:
-            imageView.contentMode = PXContentMode.Left
+            imageView.contentMode = PXContentMode.left
         case 4:
-            imageView.contentMode = PXContentMode.Right
+            imageView.contentMode = PXContentMode.right
         case 5:
-            imageView.contentMode = PXContentMode.Bottom
+            imageView.contentMode = PXContentMode.bottom
         case 6:
-            imageView.contentMode = PXContentMode.Sides
+            imageView.contentMode = PXContentMode.sides
         case 7:
-            imageView.contentMode = PXContentMode.TopBottom
+            imageView.contentMode = PXContentMode.topBottom
         default:
             fatalError("Invalid Row Specified")
         }

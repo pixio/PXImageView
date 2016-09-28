@@ -1,0 +1,6 @@
+framework module UIImageView_AFNetworking_Blocks {
+  umbrella header "UIImageView_AFNetworking-Blocks-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,29 +7,30 @@
 //
 
 import UIKit
+import PXImageView
 
 class View: UIView {
     enum PXAnimationOrientation {
-        case PXAnimationOrientationHoriztonal
-        case PXAnimationOrientationVertical
+        case pxAnimationOrientationHoriztonal
+        case pxAnimationOrientationVertical
     }
-    private let TriforceURL: NSURL = NSURL(string: "http://moodle.galenaparkisd.com/pluginfile.php/125718/course/section/38826/6440077107_23fd80e619_z.jpg")!
-    private let TriforcePlaceholder: UIImage = UIImage(named: "triforce.png")!
+    fileprivate let TriforceURL: URL = URL(string: "http://moodle.galenaparkisd.com/pluginfile.php/125718/course/section/38826/6440077107_23fd80e619_z.jpg")!
+    fileprivate let TriforcePlaceholder: UIImage = UIImage(named: "triforce.png")!
     
-    private var _constraints: [NSLayoutConstraint]
+    fileprivate var _constraints: [NSLayoutConstraint]
     
-    private var _containerView: UIView
-    private var _imageView: PXImageView
-    private var _contentModePicker: UIPickerView
+    fileprivate var _containerView: UIView
+    fileprivate var _imageView: PXImageView
+    fileprivate var _contentModePicker: UIPickerView
     
-    private var _fullWidthConstraint: NSLayoutConstraint
-    private var _minWidthConstraint: NSLayoutConstraint
-    private var _fullHeightConstraint: NSLayoutConstraint
-    private var _minHeightConstraint: NSLayoutConstraint
-    private var _widthConstraint: NSLayoutConstraint
-    private var _heightConstraint: NSLayoutConstraint
+    fileprivate var _fullWidthConstraint: NSLayoutConstraint
+    fileprivate var _minWidthConstraint: NSLayoutConstraint
+    fileprivate var _fullHeightConstraint: NSLayoutConstraint
+    fileprivate var _minHeightConstraint: NSLayoutConstraint
+    fileprivate var _widthConstraint: NSLayoutConstraint
+    fileprivate var _heightConstraint: NSLayoutConstraint
     
-    private var _orientation: PXAnimationOrientation
+    fileprivate var _orientation: PXAnimationOrientation
     
     var stuff: Int = 0
     
@@ -40,29 +41,29 @@ class View: UIView {
         _containerView.translatesAutoresizingMaskIntoConstraints = false
         
         _imageView = PXImageView()
-        _imageView.userInteractionEnabled = false
-        _imageView.contentMode = PXContentMode.TopBottom
-        _imageView.backgroundColor = UIColor.blueColor()
-        _imageView.setImageWithURL(TriforceURL, placeholderImage: TriforcePlaceholder)
+        _imageView.isUserInteractionEnabled = false
+        _imageView.contentMode = PXContentMode.topBottom
+        _imageView.backgroundColor = UIColor.blue
+        _imageView.setImageWith(TriforceURL, placeholderImage: TriforcePlaceholder)
         _imageView.translatesAutoresizingMaskIntoConstraints = false
         
         _contentModePicker = UIPickerView()
         _contentModePicker.translatesAutoresizingMaskIntoConstraints = false
-        _contentModePicker.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Vertical)
-        _contentModePicker.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: UILayoutConstraintAxis.Vertical)
+        _contentModePicker.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: UILayoutConstraintAxis.vertical)
+        _contentModePicker.setContentHuggingPriority(UILayoutPriorityRequired, for: UILayoutConstraintAxis.vertical)
         
-        _fullWidthConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: _containerView, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: 0.0)
-        _minWidthConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: _containerView, attribute: NSLayoutAttribute.Width, multiplier: 0.1, constant: 0.0)
-        _fullHeightConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: _containerView, attribute: NSLayoutAttribute.Height, multiplier: 1.0, constant: 0.0)
-        _minHeightConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: _containerView, attribute: NSLayoutAttribute.Height, multiplier: 0.1, constant: 0.0)
+        _fullWidthConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: _containerView, attribute: NSLayoutAttribute.width, multiplier: 1.0, constant: 0.0)
+        _minWidthConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: _containerView, attribute: NSLayoutAttribute.width, multiplier: 0.1, constant: 0.0)
+        _fullHeightConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: _containerView, attribute: NSLayoutAttribute.height, multiplier: 1.0, constant: 0.0)
+        _minHeightConstraint = NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: _containerView, attribute: NSLayoutAttribute.height, multiplier: 0.1, constant: 0.0)
         
         _widthConstraint = _fullWidthConstraint
         _heightConstraint = _fullHeightConstraint
         
-        _orientation = PXAnimationOrientation.PXAnimationOrientationHoriztonal
+        _orientation = PXAnimationOrientation.pxAnimationOrientationHoriztonal
         
         super.init(frame: frame)
-        let tapper: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap")
+        let tapper: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tapper.cancelsTouchesInView = false
         _containerView.addGestureRecognizer(tapper)
         
@@ -85,7 +86,7 @@ class View: UIView {
         return _contentModePicker
     }
     
-    func animateDirection(orientation: PXAnimationOrientation) {
+    func animateDirection(_ orientation: PXAnimationOrientation) {
         _orientation = orientation
         
         _widthConstraint = _fullWidthConstraint
@@ -95,14 +96,14 @@ class View: UIView {
         layoutIfNeeded()
         
         switch orientation {
-        case PXAnimationOrientation.PXAnimationOrientationHoriztonal:
+        case PXAnimationOrientation.pxAnimationOrientationHoriztonal:
             _widthConstraint = _minWidthConstraint
-        case PXAnimationOrientation.PXAnimationOrientationVertical:
+        case PXAnimationOrientation.pxAnimationOrientationVertical:
             _heightConstraint = _minHeightConstraint
         }
         setNeedsUpdateConstraints()
         
-        UIView.animateKeyframesWithDuration(1, delay: 0, options: [.LayoutSubviews, .Autoreverse, .BeginFromCurrentState], animations: {self.layoutIfNeeded()}, completion: {(finished: Bool) in self.animateDirection(self._orientation)})
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.layoutSubviews, .autoreverse, .beginFromCurrentState], animations: {self.layoutIfNeeded()}, completion: {(finished: Bool) in self.animateDirection(self._orientation)})
     }
     
     override func updateConstraints() {
@@ -112,15 +113,15 @@ class View: UIView {
         let views: [String : UIView] = ["_imageView" : _imageView, "_containerView" : _containerView, "_contentModePicker" : _contentModePicker]
         let metrics: [String : Int] = ["sp" : 20, "ssp" : 10, "bsp" : 20]
         
-        _constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("H:|-sp-[_containerView]-sp-|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: metrics, views: views))
+        _constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-sp-[_containerView]-sp-|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: metrics, views: views))
         
-        _constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("H:|-sp-[_contentModePicker]-sp-|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: metrics, views: views))
+        _constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-sp-[_contentModePicker]-sp-|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: metrics, views: views))
         
-        _constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("V:|-sp-[_containerView]-sp-[_contentModePicker]-sp-|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: metrics, views: views))
+        _constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-sp-[_containerView]-sp-[_contentModePicker]-sp-|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: metrics, views: views))
         
-        _constraints.append(NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: _containerView, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0))
+        _constraints.append(NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: _containerView, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0))
         
-        _constraints.append(NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: _containerView, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0))
+        _constraints.append(NSLayoutConstraint(item: _imageView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: _containerView, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: 0.0))
         
         _constraints.append(_widthConstraint)
         _constraints.append(_heightConstraint)
@@ -129,11 +130,11 @@ class View: UIView {
         super.updateConstraints()
     }
     
-    func handleTap(sender: UITapGestureRecognizer) {
-        if _orientation == PXAnimationOrientation.PXAnimationOrientationHoriztonal {
-            _orientation = PXAnimationOrientation.PXAnimationOrientationVertical
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        if _orientation == PXAnimationOrientation.pxAnimationOrientationHoriztonal {
+            _orientation = PXAnimationOrientation.pxAnimationOrientationVertical
         } else {
-            _orientation = PXAnimationOrientation.PXAnimationOrientationHoriztonal
+            _orientation = PXAnimationOrientation.pxAnimationOrientationHoriztonal
         }
         _widthConstraint = _fullWidthConstraint
         _heightConstraint = _fullHeightConstraint

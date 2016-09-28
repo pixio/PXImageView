@@ -1,16 +1,16 @@
 {
   "name": "PXImageView",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "An image view with more expressive content modes",
-  "description": "                       An imageview with better content modes like Top which means fit and align to top.\n",
-  "homepage": "https://git.pixio.com/",
+  "description": "An imageview with better content modes like Top which means fit and align to top.",
+  "homepage": "https://github.com/pixio/PXImageView",
   "license": "MIT",
   "authors": {
     "Daniel Blakemore": "DanBlakemore@gmail.com"
   },
   "source": {
-    "git": "git@git.pixio.com:ios-pods/pximageview.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/pixio/PXImageView.git",
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "7.0"
@@ -18,7 +18,7 @@
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
   "resource_bundles": {
-    "BetterContentModes": [
+    "PXImageView": [
       "Pod/Assets/*.png"
     ]
   },

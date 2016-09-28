@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "PXAppDelegate.h"
-#import "PXImageView-Swift.h"
+#import "PXImageViewExample-Swift.h"
 
 int main(int argc, char * argv[])
 {

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PXImageView/PXImageview.h>
+#import <PXImageView/PXImageView.h>
 
 @interface PXView : UIView
 

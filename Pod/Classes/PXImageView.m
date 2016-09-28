@@ -26,7 +26,7 @@
 
 #import "PXImageView.h"
 
-#import <UIImageView_AFNetworking-Blocks/UIImageView+AFNetworking_Blocks.h>
+#import <UIImageView_AFNetworking_Blocks/UIImageView+AFNetworking_Blocks.h>
 
 static void* frImageViewContext = &frImageViewContext;
 

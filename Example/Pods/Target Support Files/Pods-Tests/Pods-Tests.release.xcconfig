@@ -1,6 +1,8 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking" "$PODS_CONFIGURATION_BUILD_DIR/PXImageView" "$PODS_CONFIGURATION_BUILD_DIR/UIImageView_AFNetworking-Blocks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/PXImageView" "${PODS_ROOT}/Headers/Public/UIImageView_AFNetworking-Blocks"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/PXImageView" -isystem "${PODS_ROOT}/Headers/Public/UIImageView_AFNetworking-Blocks"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-Tests-AFNetworking" -l"Pods-Tests-PXImageView" -l"Pods-Tests-UIImageView_AFNetworking-Blocks" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/PXImageView/PXImageView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/UIImageView_AFNetworking-Blocks/UIImageView_AFNetworking_Blocks.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "PXImageView" -framework "UIImageView_AFNetworking_Blocks"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods
