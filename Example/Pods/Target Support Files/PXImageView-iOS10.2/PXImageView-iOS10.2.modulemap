@@ -1,0 +1,6 @@
+framework module PXImageView {
+  umbrella header "PXImageView-iOS10.2-umbrella.h"
+
+  export *
+  module * { export * }
+}

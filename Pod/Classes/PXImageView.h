@@ -86,7 +86,7 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
 /**
  * The image in the imageview.
  */
-@property (nonatomic, retain) UIImage * image;
+@property (nonatomic, retain, nullable) UIImage * image;
 
 /**
  * A content mode like the ones from apple, but better suited to fitting three of four sides.
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
  *
  *  @param url        the url for the image
  */
-- (void)setImageWithURL:(NSURL *)url;
+- (void)setImageWithURL:(nonnull NSURL *)url;
 
 /**
  *  Calls afnetworking setImageWithURL:placeholderImage
@@ -111,7 +111,7 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
  *  @param url              the url for the image
  *  @param placeholderImage image to use as placeholder until load finishes
  */
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage;
+- (void)setImageWithURL:(nonnull NSURL *)url placeholderImage:(nonnull UIImage *)placeholderImage;
 
 /**
  *  Calls afnetworking setImageWithURL and calls completion when done.
@@ -119,7 +119,7 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
  *  @param url        the url for the image
  *  @param completion completion to call when done
  */
-- (void)setImageWithURL:(NSURL *)url completion:(void(^)(UIImageView * imageView))completion;
+- (void)setImageWithURL:(nonnull NSURL *)url completion:(nullable void(^)(UIImageView * _Nullable imageView))completion;
 
 /**
  *  Calls afnetworking setImageWithURL and calls completion when done.
@@ -128,7 +128,7 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
  *  @prarm forceUpdate whether the image should be force updated, ignoring the cache
  *  @param completion  completion to call when done
  */
-- (void)setImageWithURL:(NSURL *)url forceUpdate:(BOOL)forceUpdate completion:(void(^)(UIImageView * imageView))completion;
+- (void)setImageWithURL:(nonnull NSURL *)url forceUpdate:(BOOL)forceUpdate completion:(nonnull void(^)(UIImageView * _Nullable imageView))completion;
 
 /**
  *  Calls afnetworking setImageWithURL:placeholderImage and calls completion when done
@@ -137,9 +137,9 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
  *  @param placeholderImage image to use as placeholder until load finishes
  *  @param completion       completion to call when done
  */
-- (void)setImageWithURL:(NSURL *)url
-       placeholderImage:(UIImage *)placeholderImage
-             completion:(void(^)(UIImageView * imageView))completion;
+- (void)setImageWithURL:(nonnull NSURL *)url
+       placeholderImage:(nonnull UIImage *)placeholderImage
+             completion:(nullable void(^)(UIImageView * _Nullable imageView))completion;
 
 /**
  *  Calls afnetworking setImageWithURL:placeholderImage and calls completion when done
@@ -149,10 +149,10 @@ typedef NS_ENUM(NSInteger, PXContentMode) {
  *  @prarm forceUpdate      whether the image should be force updated, ignoring the cache
  *  @param completion       completion to call when done
  */
-- (void)setImageWithURL:(NSURL *)url
-       placeholderImage:(UIImage *)placeholderImage
+- (void)setImageWithURL:(nonnull NSURL *)url
+       placeholderImage:(nonnull UIImage *)placeholderImage
             forceUpdate:(BOOL)forceUpdate
-             completion:(void(^)(UIImageView * imageView))completion;
+             completion:(nullable void(^)(UIImageView * _Nullable imageView))completion;
 
 /**
  Cancels any executing image operation for the receiver, if one exists.

@@ -1,6 +1,0 @@
-framework module PXImageView {
-  umbrella header "PXImageView-umbrella.h"
-
-  export *
-  module * { export * }
-}
