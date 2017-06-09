@@ -9,3 +9,11 @@ end
 target 'Tests' do
   pod "PXImageView", :path => "../"
 end
+
+target 'PXImageViewSwift' do
+    pod "PXImageView", :path => "../"
+end
+
+target 'PXImageViewSwiftTests' do
+    pod "PXImageView", :path => "../"
+end

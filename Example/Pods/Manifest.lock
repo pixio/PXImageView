@@ -20,7 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - PXImageView (0.1.2):
+  - PXImageView (0.2.0):
     - UIImageView_AFNetworking-Blocks
   - UIImageView_AFNetworking-Blocks (0.1.0):
     - AFNetworking (~> 2.0)
@@ -34,9 +34,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
-  PXImageView: 87bc406b74788926fd073fc399b14a30c95e3d11
+  PXImageView: 942940b9f358215f0ef2c0f384405cb441c40378
   UIImageView_AFNetworking-Blocks: 77b5ada4b4a0a1925e4c86cad1f9c3271b8e773f
 
-PODFILE CHECKSUM: baeb77e7736b89c84cb56f619f7c495835ec1a33
+PODFILE CHECKSUM: c6c301f8975f9ea3c6abea150ebbb06898a1e242
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0
